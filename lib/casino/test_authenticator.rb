@@ -29,7 +29,7 @@ class CASino::TestAuthenticator
   def extra_attributes
     attr = {}
     attr = @options[:extra_attributes].dup if @options[:extra_attributes].is_a?(Hash)
-    attr[:mail] = Faker::Internet.email if @options[:mail]
+    attr[:mail] = Faker::Internet.email if @options && @options[:mail]
     attr.length == 0 ? nil : attr
   end
 end
